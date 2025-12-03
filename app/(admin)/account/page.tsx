@@ -7,10 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Search, UserPlus, Edit, Trash2, Filter } from "lucide-react";
+import { Search, UserPlus, Edit, Trash2 } from "lucide-react";
 import { User } from "@/lib/types/index";
 import { AppDispatch } from "@/lib/redux/store";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,7 +39,7 @@ const UsersManagement = () => {
 
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
     const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [_isSubmitting, setIsSubmitting] = useState(false);
 
     const pagination = useSelector(selectUserPagination);
     const [currentPage, setCurrentPage] = useState(1);
@@ -89,7 +89,7 @@ const UsersManagement = () => {
         gender: "",
         dob: new Date(),
         avatar: "",
-        createdAt: new Date(),
+        createdAt: new Date()
     };
     setSelectedUser(newUser);
     setIsCreateDialogOpen(true);
@@ -100,7 +100,7 @@ const UsersManagement = () => {
     setIsEditDialogOpen(true);
   };
 
-  const handleUpdateUser = (user: User) => {
+  const _handleUpdateUser = (_user: User) => {
       setIsEditDialogOpen(false);
       setSelectedUser(null);
   };
@@ -128,7 +128,7 @@ const UsersManagement = () => {
         }
   };
   
-  const toggleUserStatus = (userId: string) => {
+  const toggleUserStatus = (_userId: string) => {
     // setUsers(users.map(user => 
     //   user._id === userId ? { ...user, isActive: !user.isActive } : user
     // ));

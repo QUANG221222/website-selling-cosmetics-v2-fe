@@ -35,7 +35,7 @@ import { Lens } from "@/components/ui/lens";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-const cosmeticDetail = () => {
+const CosmeticDetail = () => {
   const params = useParams();
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
@@ -470,4 +470,4 @@ const cosmeticDetail = () => {
     </div>
   );
 };
-export default cosmeticDetail;
+export default CosmeticDetail;

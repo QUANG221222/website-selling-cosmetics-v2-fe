@@ -9,7 +9,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-  SidebarTrigger,
 } from "@/components/animate-ui/components/radix/sidebar";
 import {
   BarChart3,
@@ -34,7 +33,7 @@ import { useEffect } from "react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { SocketProvider } from "@/lib/socket/SocketContext";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const menuItems = [
     {
       id: "dashboard",
@@ -147,4 +146,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default Layout;

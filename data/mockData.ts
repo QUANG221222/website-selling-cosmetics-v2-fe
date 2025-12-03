@@ -148,112 +148,112 @@ export const mockCosmetics: Cosmetic[] = [
   }
 ];
 
-export const mockOrders: Order[] = [
-  {
-    _id: "o1",
-    userId: "1",
-    receiverName: "Nguyễn Văn A",
-    receiverPhone: "0901234567",
-    receiverAddress: "123 Đường ABC, Quận 1, TP.HCM",
-    totalPrice: 1000000,
-    status: "completed",
-    items: [
-      {
-        cosmetic: mockCosmetics[0],
-        quantity: 1,
-        price: 720000,
-        subtotal: 720000
-      },
-      {
-        cosmetic: mockCosmetics[1],
-        quantity: 1,
-        price: 280000,
-        subtotal: 280000
-      }
-    ],
-    payment: {
-      status: "paid",
-      method: "Credit Card",
-      amount: 1000000,
-      paidAt: new Date("2024-10-01")
-    },
-    createdAt: new Date("2024-10-01"),
-    updatedAt: new Date("2024-10-01")
-  },
-  {
-    _id: "o2",
-    userId: "2",
-    receiverName: "Trần Thị B",
-    receiverPhone: "0987654321",
-    receiverAddress: "456 Đường XYZ, Quận 3, TP.HCM",
-    totalPrice: 590000,
-    status: "processing",
-    items: [
-      {
-        cosmetic: mockCosmetics[2],
-        quantity: 2,
-        price: 270000,
-        subtotal: 540000
-      }
-    ],
-    payment: {
-      status: "paid",
-      method: "Bank Transfer",
-      amount: 590000,
-      paidAt: new Date("2024-10-02")
-    },
-    createdAt: new Date("2024-10-02"),
-    updatedAt: new Date("2024-10-03")
-  },
-  {
-    _id: "o3",
-    userId: "5",
-    receiverName: "Phạm Thị D",
-    receiverPhone: "0945678901",
-    receiverAddress: "789 Đường DEF, Quận 7, TP.HCM",
-    totalPrice: 1200000,
-    status: "pending",
-    items: [
-      {
-        cosmetic: mockCosmetics[3],
-        quantity: 1,
-        price: 1200000,
-        subtotal: 1200000
-      }
-    ],
-    payment: {
-      status: "unpaid",
-      method: "COD",
-      amount: 1200000
-    },
-    createdAt: new Date("2024-10-05"),
-    updatedAt: new Date("2024-10-05")
-  },
-  {
-    _id: "o4",
-    userId: "1",
-    receiverName: "Nguyễn Văn A",
-    receiverPhone: "0901234567",
-    receiverAddress: "123 Đường ABC, Quận 1, TP.HCM",
-    totalPrice: 320000,
-    status: "cancelled",
-    items: [
-      {
-        cosmetic: mockCosmetics[4],
-        quantity: 2,
-        price: 160000,
-        subtotal: 320000
-      }
-    ],
-    payment: {
-      status: "failed",
-      method: "Credit Card",
-      amount: 320000
-    },
-    createdAt: new Date("2024-10-03"),
-    updatedAt: new Date("2024-10-04")
-  }
-];
+// export const mockOrders: Order[] = [
+//   {
+//     _id: "o1",
+//     userId: "1",
+//     receiverName: "Nguyễn Văn A",
+//     receiverPhone: "0901234567",
+//     receiverAddress: "123 Đường ABC, Quận 1, TP.HCM",
+//     totalPrice: 1000000,
+//     status: "completed",
+//     items: [
+//       {
+//         cosmetic: mockCosmetics[0],
+//         quantity: 1,
+//         price: 720000,
+//         subtotal: 720000
+//       },
+//       {
+//         cosmetic: mockCosmetics[1],
+//         quantity: 1,
+//         price: 280000,
+//         subtotal: 280000
+//       }
+//     ],
+//     payment: {
+//       status: "paid",
+//       method: "Credit Card",
+//       amount: 1000000,
+//       paidAt: new Date("2024-10-01")
+//     },
+//     createdAt: new Date("2024-10-01"),
+//     updatedAt: new Date("2024-10-01")
+//   },
+//   {
+//     _id: "o2",
+//     userId: "2",
+//     receiverName: "Trần Thị B",
+//     receiverPhone: "0987654321",
+//     receiverAddress: "456 Đường XYZ, Quận 3, TP.HCM",
+//     totalPrice: 590000,
+//     status: "processing",
+//     items: [
+//       {
+//         cosmetic: mockCosmetics[2],
+//         quantity: 2,
+//         price: 270000,
+//         subtotal: 540000
+//       }
+//     ],
+//     payment: {
+//       status: "paid",
+//       method: "Bank Transfer",
+//       amount: 590000,
+//       paidAt: new Date("2024-10-02")
+//     },
+//     createdAt: new Date("2024-10-02"),
+//     updatedAt: new Date("2024-10-03")
+//   },
+//   {
+//     _id: "o3",
+//     userId: "5",
+//     receiverName: "Phạm Thị D",
+//     receiverPhone: "0945678901",
+//     receiverAddress: "789 Đường DEF, Quận 7, TP.HCM",
+//     totalPrice: 1200000,
+//     status: "pending",
+//     items: [
+//       {
+//         cosmetic: mockCosmetics[3],
+//         quantity: 1,
+//         price: 1200000,
+//         subtotal: 1200000
+//       }
+//     ],
+//     payment: {
+//       status: "unpaid",
+//       method: "COD",
+//       amount: 1200000
+//     },
+//     createdAt: new Date("2024-10-05"),
+//     updatedAt: new Date("2024-10-05")
+//   },
+//   {
+//     _id: "o4",
+//     userId: "1",
+//     receiverName: "Nguyễn Văn A",
+//     receiverPhone: "0901234567",
+//     receiverAddress: "123 Đường ABC, Quận 1, TP.HCM",
+//     totalPrice: 320000,
+//     status: "cancelled",
+//     items: [
+//       {
+//         cosmetic: mockCosmetics[4],
+//         quantity: 2,
+//         price: 160000,
+//         subtotal: 320000
+//       }
+//     ],
+//     payment: {
+//       status: "failed",
+//       method: "Credit Card",
+//       amount: 320000
+//     },
+//     createdAt: new Date("2024-10-03"),
+//     updatedAt: new Date("2024-10-04")
+//   }
+// ];
 
 // Revenue data for dashboard
 export const revenueData = [

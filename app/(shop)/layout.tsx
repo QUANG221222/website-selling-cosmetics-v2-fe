@@ -1,10 +1,13 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-const layout = ({children} :  { children: React.ReactNode }) => {
+const Layout = ({children} :  { children: React.ReactNode }) => {
+  const [selectedTab, setSelectedTab] = useState<{ href: string; label: string; }>({ href: '', label: '' });
+  
   return (
     <> 
-    <Header/>
+    <Header selectedTab={selectedTab} setSelectedTab={setSelectedTab}/>
         <main>
             <div className="min-h-screen py-10">
                 {children}
@@ -15,4 +18,4 @@ const layout = ({children} :  { children: React.ReactNode }) => {
   )
 }
 
-export default layout
+export default Layout

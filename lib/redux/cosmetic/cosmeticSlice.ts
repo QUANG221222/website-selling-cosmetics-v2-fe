@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction, createSelector } from '@reduxjs/toolkit'
 import { cosmeticApi, CreateCosmeticData, UpdateCosmeticData } from '@/lib/api/cosmetic'
 import { Cosmetic } from '@/lib/types'
-import { toast } from 'sonner'
 import { PaginationParams } from '@/lib/api/order'
 import { RootState } from '../store'
 
@@ -11,7 +10,7 @@ interface CosmeticState {
     totalCount: number,       // Tổng số users
     currentPage: number,      // Trang hiện tại
     pageSize: number,        // Số items/trang
-    filters: {},         // Bộ lọc (role, status, etc.)
+    filters: object | null,         // Bộ lọc (role, status, etc.)
     sortBy: 'createdAt', // Sắp xếp theo
     sortOrder: 'desc'
   }

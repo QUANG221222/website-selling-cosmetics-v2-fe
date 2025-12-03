@@ -11,7 +11,7 @@ interface OrderState {
     totalCount: number       // Tổng số users
     currentPage: number      // Trang hiện tại
     pageSize: number         // Số items/trang
-    filters: {}              // Bộ lọc (role, status, etc.)
+    filters: object | null         // Bộ lọc (role, status, etc.)
     sortBy: 'createdAt'      // Sắp xếp theo
     sortOrder: 'desc'
   }
