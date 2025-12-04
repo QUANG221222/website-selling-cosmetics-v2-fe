@@ -23,19 +23,15 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080",
       {
         path: '/socket.io/',
-        transports: ['polling', 'websocket'],
+        transports: ['websocket', 'polling'],
         autoConnect: true,
         reconnection: true,
-        reconnectionAttempts: 10,
+        reconnectionAttempts: 5,
         reconnectionDelay: 1000,
         reconnectionDelayMax: 5000,
-        timeout: 20000,
-        secure: true,
-        rejectUnauthorized: false,
+        timeout: 10000,
         withCredentials: true,
-        upgrade: true,
-        rememberUpgrade: false,
-        forceNew: false,
+        forceNew: true,
       }
     );
 
@@ -58,9 +54,11 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       console.error("🔴 Connection error:", error.message);
       setIsConnected(false);
       
-      // Xử lý Session ID unknown
-      if (error.message.includes("Session ID unknown")) {
-        console.log("🔄 Session expired, creating new connection...");
+      // Force reconnect with new session on any error
+      if (error.message.includes("Session ID unknown") || 
+          error.message.includes("400")) {
+        console.log("🔄 Creating fresh connection...");
+        socketInstance.io.opts.forceNew = true;
         socketInstance.disconnect();
         setTimeout(() => socketInstance.connect(), 1000);
       }
