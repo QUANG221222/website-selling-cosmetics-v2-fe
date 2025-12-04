@@ -22,7 +22,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
     const socketInstance = io(
       process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080",
       {
-        path: '/beauty/',
+        path: '/socket.io/',
         transports: ['websocket'],
         autoConnect: true,
         reconnection: true,
