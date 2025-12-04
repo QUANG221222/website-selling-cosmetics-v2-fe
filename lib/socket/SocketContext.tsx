@@ -22,18 +22,18 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
     const socketInstance = io(
       process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080",
       {
-        transports: ["websocket"],
+        transports: ['websocket', 'polling'],
         autoConnect: true,
       }
     );
 
     socketInstance.on("connect", () => {
-      // console.log("✅ Socket connected");
+      console.log("✅ Socket connected");
       setIsConnected(true);
     });
 
     socketInstance.on("disconnect", () => {
-      // console.log("❌ Socket disconnected");
+      console.log("❌ Socket disconnected");
       setIsConnected(false);
     });
 
