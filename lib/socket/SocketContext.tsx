@@ -20,7 +20,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const socketInstance = io(
-      process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080",
+      process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:8080",
       {
         path: '/beauty/',
         transports: ['websocket', 'polling'],
